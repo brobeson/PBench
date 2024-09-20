@@ -24,8 +24,10 @@ When the context manager exits, it runs the benchmarks.
 >>> with Benchmark() as benchmark:
 ...    benchmark.subject = fibonacci
 ...
->>> print(benchmark.run_time)
+>>> benchmark.mean
 0.00345245963
+>>> benchmark.standard_deviation
+0.00050298475
 ```
 
 By default, PBench runs the subject 1000 times.
@@ -38,6 +40,8 @@ You can change this with the `runs` argument to `Benchmark()`:
 >>> with Benchmark(runs=2000) as benchmark:
 ...     benchmark.subject = fibonacci
 ...
->>> print(benchmark.run_time)
+>>> benchmark.mean
 0.00345245963
+>>> benchmark.standard_deviation
+0.00050298475
 ```

@@ -18,30 +18,24 @@ In the context manager, set the benchmark `subject` to the function you want to 
 When the context manager exits, it runs the benchmarks.
 
 ```python
->>> def fibonacci():
-...     # Calculate Fibonacci of 5.
-...
->>> with Benchmark() as benchmark:
-...    benchmark.subject = fibonacci
-...
->>> benchmark.mean
-0.00345245963
->>> benchmark.standard_deviation
-0.00050298475
+def fibonacci():
+    # Calculate Fibonacci of 5.
+
+with Benchmark() as benchmark:
+   benchmark.subject = fibonacci
+print(benchmark.mean)
+print(benchmark.standard_deviation)
 ```
 
 By default, PBench runs the subject 1000 times.
 You can change this with the `runs` argument to `Benchmark()`:
 
 ```python
->>> def fibonacci():
-...     # Calculate Fibonacci of 5.
-...
->>> with Benchmark(runs=2000) as benchmark:
-...     benchmark.subject = fibonacci
-...
->>> benchmark.mean
-0.00345245963
->>> benchmark.standard_deviation
-0.00050298475
+def fibonacci():
+    # Calculate Fibonacci of 5.
+
+with Benchmark(runs=2000) as benchmark:
+    benchmark.subject = fibonacci
+print(benchmark.mean)
+print(benchmark.standard_deviation)
 ```

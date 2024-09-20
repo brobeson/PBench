@@ -18,11 +18,11 @@ In the context manager, set the benchmark `subject` to the function you want to 
 When the context manager exits, it runs the benchmarks.
 
 ```python
-def fibonacci():
+def fibonacci(n: int) -> int:
     # Calculate Fibonacci of 5.
 
 with Benchmark() as benchmark:
-   benchmark.subject = fibonacci
+    benchmark.set_user_code(fibonacci, n=5)
 print(benchmark.mean)
 print(benchmark.standard_deviation)
 ```
@@ -35,7 +35,22 @@ def fibonacci():
     # Calculate Fibonacci of 5.
 
 with Benchmark(runs=2000) as benchmark:
-    benchmark.subject = fibonacci
+    benchmark.set_user_code(fibonacci, n=5)
 print(benchmark.mean)
 print(benchmark.standard_deviation)
 ```
+
+## Reference
+
+### `Benchmark.set_user_code(function: Callable, **kwargs)`
+
+Set the user code to benchmark.
+
+#### Arguments
+
+- **function**  
+  **type:** Any callable object  
+  **description:** The benchmark context manager measures the run time of this function.
+- **kwargs**  
+  **type:** Keyword arguments  
+  **description:** The benchmark passes these arguments to `function`.

@@ -23,8 +23,6 @@ def fibonacci(n: int) -> int:
 
 with Benchmark() as benchmark:
     benchmark.set_user_code(fibonacci, n=5)
-print(benchmark.mean)
-print(benchmark.standard_deviation)
 ```
 
 By default, PBench runs the subject 1000 times.
@@ -36,11 +34,26 @@ def fibonacci():
 
 with Benchmark(runs=2000) as benchmark:
     benchmark.set_user_code(fibonacci, n=5)
-print(benchmark.mean)
-print(benchmark.standard_deviation)
 ```
 
 ## Reference
+
+### `Benchmark.__init__()`
+
+Initialize a `Benchmark` context manager.
+
+#### Arguments
+
+- `runs`  
+  **Type:** `int`  
+  **Default:** 1000  
+  **Description:** Run the user code this many times.
+  Multiple runs creates a statistical distribution of run times to account for variables outside the user's control.
+- `name`  
+  **Type:** `str`  
+  **Default:** `None`  
+  **Description:** A name for the benchmark.
+  If this is `None` or an empty string, the benchmark takes the name from the user function.
 
 ### `Benchmark.set_user_code(function: Callable, **kwargs)`
 

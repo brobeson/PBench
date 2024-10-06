@@ -59,7 +59,7 @@ Initialize a `Benchmark` context manager.
 
 Set the user code to benchmark.
 
-#### Arguments
+#### Arguments <!-- markdownlint-disable-line no-duplicate-heading -->
 
 - **function**  
   **type:** Any callable object  

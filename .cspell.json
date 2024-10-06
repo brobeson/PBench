@@ -1,7 +1,7 @@
 {
   "version": "0.2",
   "dictionaries": ["python"],
-  "ignorePaths": [".gitignore"],
+  "ignorePaths": [".gitignore", "__pycache__"],
   "words": [
     "autodocstring",
     "bierner",

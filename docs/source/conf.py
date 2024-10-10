@@ -31,6 +31,7 @@ exclude_patterns = []
 # html_theme = 'alabaster'
 html_theme = "furo"
 html_static_path = ["_static"]
+html_title = f"{project}"
 # https://pradyunsg.me/furo/customisation/
 html_theme_options = {
     # "light_css_variables"

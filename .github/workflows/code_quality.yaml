@@ -4,30 +4,9 @@ on:
   pull_request:
   push:
 jobs:
-  # dotFiles:
-  #   name: Project Files
-  #   uses: brobeson/SupportFileQuality/.github/workflows/support_files.yaml@v1
-  # python:
-  #   name: Python
-  #   uses: brobeson/PythonWorkflow/.github/workflows/python.yaml@v1
-  docs:
-    runs-on: ubuntu-latest
-    name: Docs
-    steps:
-      - name: Install Tools
-        run: pip3 install sphinx
-      - name: Clone the repository
-        uses: actions/checkout@v4
-      - name: Install requirements
-        run: pip3 install -r requirements.txt
-      - name: Build the docs
-        working-directory: docs
-        run: >
-          sphinx-build
-          --fail-on-warning
-          --builder html
-          --doctree-dir build/doctrees
-          --jobs auto
-          --nitpicky
-          .
-          build/html
+  dotFiles:
+    name: Project Files
+    uses: brobeson/SupportFileQuality/.github/workflows/support_files.yaml@v1
+  python:
+    name: Python
+    uses: brobeson/PythonWorkflow/.github/workflows/python.yaml@8-build-documentation

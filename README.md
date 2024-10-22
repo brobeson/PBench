@@ -10,7 +10,7 @@ For this example, we'll measure how long it takes to run a recursive implementat
 ```python
 # fibonacci_benchmark.py
 
-from pbench import Benchmark
+from rayne import Benchmark
 
 # This is the function we want to measure.
 def fibonacci(n):

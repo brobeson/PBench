@@ -5,15 +5,15 @@ A micro benchmarking utility for Python
 [![Static Analysis](https://github.com/brobeson/Rayne/actions/workflows/code_quality.yaml/badge.svg)](https://github.com/brobeson/Rayne/actions/workflows/code_quality.yaml)
 [![Coverage Status](https://coveralls.io/repos/github/brobeson/Rayne/badge.svg?branch=main)](https://coveralls.io/github/brobeson/Rayne?branch=main)
 
-## Using PBench
+## Using Rayne
 
-First, import `pbench`
+First, import `Rayne`
 
 ```python
-from pbench import Benchmark
+from rayne import Benchmark
 ```
 
-PBench uses a context manager to run a micro benchmark.
+Rayne uses a context manager to run a micro benchmark.
 In the context manager, set the benchmark `subject` to the function you want to benchmark.
 When the context manager exits, it runs the benchmarks.
 
@@ -25,7 +25,7 @@ with Benchmark() as benchmark:
     benchmark.set_user_code(fibonacci, n=5)
 ```
 
-By default, PBench runs the subject 1000 times.
+By default, Rayne runs the subject 1000 times.
 You can change this with the `runs` argument to `Benchmark()`:
 
 ```python
